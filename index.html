@@ -666,6 +666,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       padding:10px;
     }
     .lead-success-close:hover{color:var(--white)}
+    .lead-success-actions .button.blue{background:linear-gradient(180deg,#1E88F0,#0D5FC7);border-color:rgba(255,255,255,.22);box-shadow:0 18px 50px rgba(13,95,199,.42),inset 0 1px 0 rgba(255,255,255,.22)}
+    .lead-success-actions .button.blue:hover{box-shadow:0 22px 70px rgba(13,95,199,.52),inset 0 1px 0 rgba(255,255,255,.3)}
+    .lead-success-actions .button.green{background:linear-gradient(180deg,#25D366,#128C4A);border-color:rgba(255,255,255,.22);box-shadow:0 18px 50px rgba(18,140,74,.42),inset 0 1px 0 rgba(255,255,255,.22)}
+    .lead-success-actions .button.green:hover{box-shadow:0 22px 70px rgba(18,140,74,.52),inset 0 1px 0 rgba(255,255,255,.3)}
 
   
     /* v43 - bloco de imagem no card lateral do hero */
@@ -1818,7 +1822,8 @@ html, body, body *{letter-spacing:0!important;}
 <h3 id="leadSuccessTitle">Preenchido com sucesso</h3>
 <p>Recebemos suas informações. Agora clique abaixo para falar no WhatsApp e avançar na garantia da sua vaga.</p>
 <div class="lead-success-actions">
-<a class="button" href="https://wa.me/554891197470?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20garantir%20a%20minha%20vaga%20para%20o%20Evento%20ROI%20Hunters%20que%20acontecer%C3%A1%20em%20Florian%C3%B3polis/SC." id="leadWhatsappCta" rel="noopener" target="_blank">Fale pelo WhatsApp</a>
+<a class="button blue" href="https://www.sympla.com.br/evento/roi-hunters-experience/3459590?referrer=www.google.com&amp;referrer=www.google.com" id="leadBuyTicketCta" rel="noopener" target="_blank">Comprar ingresso</a>
+<a class="button green" href="https://wa.me/554831982088?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20garantir%20minha%20vaga%20para%20o%20ROI%20HUNTERS%20EXPERIENCE!%20Pode%20me%20ajudar%3F" id="leadWhatsappCta" rel="noopener" target="_blank">Dúvidas? Fale com um especialista</a>
 <button class="lead-success-close" id="leadSuccessClose" type="button">Fechar</button>
 </div>
 </div>
@@ -1829,6 +1834,7 @@ html, body, body *{letter-spacing:0!important;}
         const modal = document.getElementById('leadSuccessModal');
         const closeBtn = document.getElementById('leadSuccessClose');
         const whatsappCta = document.getElementById('leadWhatsappCta');
+        const buyTicketCta = document.getElementById('leadBuyTicketCta');
         const whatsappInput = document.getElementById('whatsapp');
         const cnpjInput = document.getElementById('cnpj');
 
@@ -1952,6 +1958,12 @@ html, body, body *{letter-spacing:0!important;}
         if (whatsappCta) {
           whatsappCta.addEventListener('click', function(){
             pushDataLayer('lead_roi_hunters_whatsapp_click', getFormData());
+          });
+        }
+
+        if (buyTicketCta) {
+          buyTicketCta.addEventListener('click', function(){
+            pushDataLayer('lead_roi_hunters_buy_ticket_click', getFormData());
           });
         }
       })();
